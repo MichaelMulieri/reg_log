@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 900px;
+    display: flex;
+}
+
+.reg, .login{
+    width: 500px;
+    border: solid 1px gray;
+    padding: 40px;
+    margin: 10px;
+    background-color: rgb(73, 73, 73);
+    color: white;
+}
+
+input{
+    margin-left: 30px;
+}
+
+h1{
+    margin-bottom: 20px;
+}
