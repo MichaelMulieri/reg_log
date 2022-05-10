@@ -77,7 +77,7 @@ class User:
             is_valid = False  
         if 'birthdate' not in user_data:
             flash("You must enter a birthdate")
-            is_valid == False
+            is_valid = False
         # if not PASSWORD_REGEX.match(user_data)['password']:
         #     flash("Invalid Password")
         #     is_valid = False
