@@ -3,6 +3,7 @@ from pprint import pprint
 from flask_app import app
 from flask import render_template, request, redirect, flash, session
 from flask_app.models.user import User
+from flask_app.models.message import Message
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
@@ -46,7 +47,10 @@ def welcome():
     data ={
         'id': session['user_id']
     }
-    return render_template('welcome.html', user = User.get_by_id(data))
+    user = User.get_one(data)
+    messages = Message.get_user_messages(data)
+    users = User.get_all()
+    return render_template('welcome.html', user = user, users = users, messages = messages)
 
 @app.route('/logout')
 def logout():
